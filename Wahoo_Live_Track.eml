@@ -1,0 +1,417 @@
+Delivered-To: stijnmade@gmail.com
+Received: by 2002:a17:906:3558:b0:993:a9e6:4de6 with SMTP id s24csp6508877eja;
+        Mon, 17 Jul 2023 00:39:15 -0700 (PDT)
+X-Google-Smtp-Source: APBJJlGyGlV28O+eyTvhWak765lEulhZHUBL+BykZG981ssaXAjZ3YF3BeKHScflQ1sP7bEAB8TD
+X-Received: by 2002:a1f:5f94:0:b0:481:4dca:c2c1 with SMTP id t142-20020a1f5f94000000b004814dcac2c1mr4156383vkb.15.1689579555465;
+        Mon, 17 Jul 2023 00:39:15 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1689579555; cv=none;
+        d=google.com; s=arc-20160816;
+        b=R98Sz9BxH+e4uPxQNOiJiz6vxNF2MQunTK5d1b4xsPMslAOV0Ok+b66YHNPDlDuo9B
+         KBaeODY9kOdksxa4nwpVLdZlunSIUbbVAyH5GalYuwzAFtoibPVZnZIFmLBNcj/83Dyq
+         aHIB44zK/Q4xLD8Ap/4l/6NKrrvs3vxYsmqZyXZLyhYvF3Oe9VX8wPWeApdzJrsxl4K3
+         303cWpUr/IzZbLZ+C0uGgPXg5cfb49QuLIEwU9K6E7cVr0YEE1sSkVvbOqY+zPK+kJHO
+         kiGqEixvNaHh5hyclTpmAC0bNsaqo2iMw0EvO2746wS/IL0lOXGKzLRhKfgxpovZVGDb
+         VETw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:list-unsubscribe:to:reply-to:mime-version
+         :subject:message-id:from:date:dkim-signature:dkim-signature;
+        bh=5qeTDZmSlSJeGACNVJXrJCbGfwHeL7aHkcSIlADFQ9s=;
+        fh=ts6t8L5e+vpCpu+i0W7DO3qlFSKBEqEJx8BEXMY/4bc=;
+        b=VY5vFdIR4IYq8KCLFeGkW0pHXclHcdv+eDmtsXpIzOc5UhH23EGfSkc8eNH0Tx7KtW
+         yB/ic8lpH8tQRjgeKJA66ZNy6kI/yQsIdxFuQUgcXSzwFXxIBC54zWwyxU02apqXClkW
+         co/1VKTDMdgiVKtvX4RjVsiqg93HkGHRVXWcABL//oJOe1DgqJnhZeQDndcvaM+QWzqr
+         alH3NDtagY6t6gylFFRF26zZQrxySWawarCdaqixiQ1Jjp3xAB8pa/McJBM+WAcDqZGS
+         /+bvjmvMfuSOXnW8T5NliHDGcSE1Uuu1ynnT4k+3zracKHTUFYSBNqA15dfvlbVFElKp
+         rWTQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@wahooligan.com header.s=s1 header.b=nM9K8LQx;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=GfiViyyr;
+       spf=pass (google.com: domain of bounces+1889734-3c7b-stijnmade=gmail.com@mail.wahooligan.com designates 168.245.54.62 as permitted sender) smtp.mailfrom="bounces+1889734-3c7b-stijnmade=gmail.com@mail.wahooligan.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=wahooligan.com
+Return-Path: <bounces+1889734-3c7b-stijnmade=gmail.com@mail.wahooligan.com>
+Received: from o1.sgmail.wahoofitness.com (o1.sgmail.wahoofitness.com. [168.245.54.62])
+        by mx.google.com with ESMTPS id d2-20020a25a302000000b00bb064781e48si12718460ybi.515.2023.07.17.00.39.14
+        for <stijnmade@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 17 Jul 2023 00:39:15 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+1889734-3c7b-stijnmade=gmail.com@mail.wahooligan.com designates 168.245.54.62 as permitted sender) client-ip=168.245.54.62;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@wahooligan.com header.s=s1 header.b=nM9K8LQx;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=GfiViyyr;
+       spf=pass (google.com: domain of bounces+1889734-3c7b-stijnmade=gmail.com@mail.wahooligan.com designates 168.245.54.62 as permitted sender) smtp.mailfrom="bounces+1889734-3c7b-stijnmade=gmail.com@mail.wahooligan.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=wahooligan.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wahooligan.com;
+	h=from:subject:mime-version:reply-to:x-feedback-id:to:list-unsubscribe:
+	content-type:content-transfer-encoding:cc:content-type:from:subject:to;
+	s=s1; bh=5qeTDZmSlSJeGACNVJXrJCbGfwHeL7aHkcSIlADFQ9s=;
+	b=nM9K8LQxhM1as2ufRRZXcaNZizPiM/SAvbHq2tOigoMqH/u2glOXAexdOLwA+t5YI9fr
+	nsDqqHRWXMVeRVwR9jXoJFHsAEdWU23P9JUT5BE1ek1lEnsyZa3qm8LqtgmQlAF51MCC9B
+	huS6+fjq0Rz8b0mPmjZ1Q+eCJ6cjkbUl4+ibV3qZYuI/V+IeOvaqASj+JHH09dJ7ehnI/f
+	tsBosb9ijYjO/LbXtzSu3BA+Tgq0i0Oc92Q3JQJhWSc4q7qGhymuEaCRK6Hb2BKcyOccS3
+	VgQPYKG1C5Qh/97cOybDwVEZ6tThxf/InQO9C/xtiNTJ404Tsol2LODXyXk+O6ig==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=from:subject:mime-version:reply-to:x-feedback-id:to:list-unsubscribe:
+	content-type:content-transfer-encoding:cc:content-type:from:subject:to;
+	s=smtpapi; bh=5qeTDZmSlSJeGACNVJXrJCbGfwHeL7aHkcSIlADFQ9s=;
+	b=GfiViyyrnR30zju+Vv8raTdw6cXkQff/a7ZeGmOVpQNTGlmaD6bjAAM4SAtVz+C1HzPY
+	z6digNbsZqrM5tVOcEDkkj1juzvYQgEM3soDRVuNI/gtO/r9UqJNpS7urUgVwmkHIMhGPa
+	oPb/JU7/ekRemBXuN+l5IwZnANvvWJHi0=
+Received: by filterdrecv-84854fb664-6rlxw with SMTP id filterdrecv-84854fb664-6rlxw-1-64B4F022-22
+        2023-07-17 07:39:14.594725139 +0000 UTC m=+5817782.163917061
+Received: from mail.wahooligan.com (unknown)
+	by geopod-ismtpd-11 (SG)
+	with ESMTP id 5Xtcu1i-RlOOmqWzP9QRig
+	for <stijnmade@gmail.com>;
+	Mon, 17 Jul 2023 07:39:14.507 +0000 (UTC)
+Date: Mon, 17 Jul 2023 07:39:14 +0000 (UTC)
+From: Wahoo Fitness <no-reply@wahooligan.com>
+Message-ID: <64b4f0223bd49_1218a2c665b8@wf-prd-wahoo-cloud-app-bbc56f585-pzj9w.mail>
+Subject: Wahoo Live Track
+Mime-Version: 1.0
+Reply-To: Stijn van der Made <no-reply@wahooligan.com>
+X-Feedback-ID: 1889734:SG
+X-SG-EID: 
+ =?us-ascii?Q?+nN1cgnLuC=2Ff++LJO3UFxypCo+6yZWmat1i1R50S84WM+jKTfN+kDbA98MabLp?=
+ =?us-ascii?Q?zVStkcahiyN2ZXhyowECg+8rzmdMunJiyBIMqR8?=
+ =?us-ascii?Q?QFNLhWzpFEi0Ap=2Fd15WFp7tWFKelToLFcwKpwGb?=
+ =?us-ascii?Q?bN+4eUL0zg=2FgdOHUSdX+rWknXxRdUzArCYVQxmS?=
+ =?us-ascii?Q?3RyVrRNfDF+YR=2FbtZoATmQoy4OXgsGKZcmAOkhg?=
+ =?us-ascii?Q?tenQKP2+yyCYfG6bl12bvUjInX=2FoCbJqw2fnKu?=
+To: stijnmade@gmail.com
+X-Entity-ID: GvjWcuAjgRkhMfpXpuVM5Q==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40mail=2Ewahooligan=2Ecom=3Fsubject=3D1889734=2Ez8xiVE?=
+ =?us-ascii?Q?ZcJZkxlhZkeS9YbxiSkwm=5FJSXlhuuT5jQCp6hoM?=
+ =?us-ascii?Q?DAwdTAwMFn0v3Z7ZtIHTqgph5tfUzEEJnPRY8b=5F?=
+ =?us-ascii?Q?Dr7donT9jatIdthLBeWmYEpFaaVSCJlEho5sAyU?=
+ =?us-ascii?Q?7BPR0lbbsvo6i-=5Ft1WlbrRkFhLwSILMq4WN2wUq?=
+ =?us-ascii?Q?43UselvQoco=5FMJO=5FujBw=3D=3D=2EnMK=5FAd6W-JysxBBB?=
+ =?us-ascii?Q?nRHcmtrtL15CudkfRi39TH6c-jVoMDAwdTAwMPv?=
+ =?us-ascii?Q?0YIa3YkU6sB2gduyLuVuIYr1uM73vyGKdrLAfSU?=
+ =?us-ascii?Q?ufn7nf5hXEnhEpxZ3n8Wphs29SmxomPIhfy2QtP?=
+ =?us-ascii?Q?RK3SzNOP0GXNCXPMHS3zxorpTiSorseDW8u9M4-?=
+ =?us-ascii?Q?XEmiK9Ht094xAvZFiAcjPCohCAK-G5eK4p6EZYf?=
+ =?us-ascii?Q?TWhWRqzvTRw=5Ff=3E?=
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_64b4f0223b6aa_1218a2c66475";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_64b4f0223b6aa_1218a2c66475
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Stijn v is starting an activity and you can track their
+progress:
+
+https://www.wahooligan.com/users/live/PcoapJrrFgYl5sKKdToy3w
+
+-->
+-->
+
+-->
+-->
+Unsubscribe From This List https://u1889734.ct.sendgrid.net/asm/unsubscribe/?user_id=1889734&data=4zHCe0qn4MoSH3mcD9QtxlMWGzZd1zkiFW0o5CH3zRVoMDAwdTAwMMwFkCzm8SeuJ4sAogIAuRZiZ4y8Fr9UKdYtwy1UbaXmz6tfvNJHs2bZ7d6FdHRxEVcPgK9HA4AQFNu9ScGYFunY1Y6PoQEZWUqG3TxGDz2duiQSEHSDCgovxo8-SU3g3pRn9onDGjm_rvwzxB9xpOtM01Vq1UoBZ4f9aJNGcj8Bli74ZXvswxqt7L1gx1c7457xCylESuMpaibH3_fnCxA1jDYw0Soyj6IPAec5jR6lyhKdtEkbUnyQlr-LXWL3ZmA8IsK5vIZN6b0eJYUqaXrHk5qVdVu2j_NVhKe3k3_zY1XvGuTlf633LFYhXoxMfmelobJmoRtkLexTZEmDmdcbGf0vqnIX-pCORF8lC9O7 | Manage Email Preferences https://u1889734.ct.sendgrid.net/asm/?user_id=1889734&data=kRkTUY8P6yu4mJScfL102-BDuOiu0AOU7F7lAe80LF1oMDAwdTAwMAZxgHYGTxYvqR_j7jerm6A9_gCfxXIFqe_eh2IkdlfQFLzVzn3ZnjhZJ5zJcYR9OHlsPaY97h4AsO5zUd1qnv6e5eQNhywgdUbx1obVpoqLdPnX2NJrNLviLsPlKDr4cCxc6p3ZzERwfUI1NRkWsvdFcseKgvTyDtR7BP1k19EFZbd-vv9373-VPPSlj9FmdsAVzcmb3SdWSdix_1BCV53cpciBspVFZ9yW7w6EPUpB-9ZhdfMWZ_h0I6IojMpCMWb0R_fM1uzmMZ5Vy8TmCWCkd3-Jexy94iV5aThviVfkpOJoPh5yMn396mfauESdEDLJAn3GT7DCn-8VopiY7nc=
+----==_mimepart_64b4f0223b6aa_1218a2c66475
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml" style="background-color: #eff0f1; margin: 0; padding: 0;">
+<head>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <title>Wahoo Live Track</title>
+<style>@font-face {
+font-family: 'RBNo3.1'; src: url("https://cdn.wahooligan.com/wahoo-cloud/fonts/RBNo3.1-Light.otf") format("truetype"); font-weight: 200; font-style: normal;
+}
+@font-face {
+font-family: 'RBNo3.1'; src: url("https://cdn.wahooligan.com/wahoo-cloud/fonts/RBNo3.1-Book.otf") format("truetype"); font-weight: 300; font-style: normal;
+}
+@font-face {
+font-family: 'RBNo3.1'; src: url("https://cdn.wahooligan.com/wahoo-cloud/fonts/RBNo3.1-Medium.otf") format("truetype"); font-weight: 400; font-style: normal;
+}
+@font-face {
+font-family: 'RBNo3.1'; src: url("https://cdn.wahooligan.com/wahoo-cloud/fonts/RBNo3.1-Bold.otf") format("truetype"); font-weight: 500; font-style: normal;
+}
+@font-face {
+font-family: 'RBNo3.1'; src: url("https://cdn.wahooligan.com/wahoo-cloud/fonts/RBNo3.1-Extrabold.otf") format("truetype"); font-weight: 600; font-style: normal;
+}
+@font-face {
+font-family: 'RBNo3.1'; src: url("https://cdn.wahooligan.com/wahoo-cloud/fonts/RBNo3.1-Black.otf") format("truetype"); font-weight: 700; font-style: normal;
+}
+@font-face {
+font-family: 'RBNo2.1a'; src: url("https://cdn.wahooligan.com/wahoo-cloud/fonts/rbno2_1a-book-webfont.svg") format("svg"),url("https://cdn.wahooligan.com/wahoo-cloud/fonts/rbno2_1a-book-webfont.woff") format("woff"),url("https://cdn.wahooligan.com/wahoo-cloud/fonts/rbno2_1a-book-webfont.eot") format("eot"),url("https://cdn.wahooligan.com/wahoo-cloud/fonts/rbno2_1a-book-webfont.ttf") format("truetype"); font-weight: 400; font-style: normal;
+}
+@font-face {
+font-family: 'RBNo2.1a'; src: url("https://cdn.wahooligan.com/wahoo-cloud/fonts/rbno2_1a-medium-webfont.svg") format("svg"),url("https://cdn.wahooligan.com/wahoo-cloud/fonts/rbno2_1a-medium-webfont.woff") format("woff"),url("https://cdn.wahooligan.com/wahoo-cloud/fonts/rbno2_1a-medium-webfont.eot") format("eot"),url("https://cdn.wahooligan.com/wahoo-cloud/fonts/rbno2_1a-medium-webfont.ttf") format("truetype"); font-weight: 500; font-style: normal;
+}
+@font-face {
+font-family: 'RBNo2.1a'; src: url("https://cdn.wahooligan.com/wahoo-cloud/fonts/rbno2.1a-bold-webfont.svg") format("svg"),url("https://cdn.wahooligan.com/wahoo-cloud/fonts/rbno2.1a-bold-webfont.woff") format("woff"),url("https://cdn.wahooligan.com/wahoo-cloud/fonts/rbno2.1a-bold-webfont.eot") format("eot"),url("https://cdn.wahooligan.com/wahoo-cloud/fonts/rbno2.1a-bold-webfont.ttf") format("truetype"); font-weight: 700; font-style: normal;
+}
+@font-face {
+font-family: 'Antonio Light'; font-style: normal; font-weight: normal; src: local("Antonio Light"),url("https://cdn.wahooligan.com/wahoo-cloud/fonts/Antonio-Light.woff") format("woff");
+}
+@font-face {
+font-family: 'Antonio Regular'; font-style: normal; font-weight: normal; src: local("Antonio Regular"),url("https://cdn.wahooligan.com/wahoo-cloud/fonts/Antonio-Regular.woff") format("woff");
+}
+@font-face {
+font-family: 'Antonio Bold'; font-style: normal; font-weight: normal; src: local("Antonio Bold"),url("https://cdn.wahooligan.com/wahoo-cloud/fonts/Antonio-Bold.woff") format("woff");
+}
+body {
+height: 100% !important; margin: 0; padding: 0; width: 100% !important; font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+img {
+border: 0; outline: none; text-decoration: none; height: auto; line-height: 100%;
+}
+.footerContent a:visited {
+color: #606060; font-weight: normal; text-decoration: underline;
+}
+.ReadMsgBody {
+width: 100%;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic; display: block; outline: none; text-decoration: none;
+}
+body {
+line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important;
+}
+body {
+background-color: #eff0f1; font-family: 'Open Sans', Helvetica, sans-serif;
+}
+.preheaderContent a:visited {
+color: #606060; font-weight: normal; text-decoration: underline;
+}
+.leftColumnContent a:visited {
+color: #0098ce; font-weight: normal; text-decoration: underline;
+}
+.rightColumnContent a:visited {
+color: #0098ce; font-weight: normal; text-decoration: underline;
+}
+.bodyContent a:visited {
+color: #EB4102;
+}
+.headerContent a:visited {
+color: #EB4102; font-weight: normal; text-decoration: underline;
+}
+.buttonContent a:visited {
+text-decoration: none;
+}
+.buttonContent a:hover {
+text-decoration: none;
+}
+.buttonContent a:active {
+text-decoration: none;
+}
+.tenant_approved .bodyContent a:visited {
+color: #00A9E8 !important;
+}
+@media only screen and (max-width: 480px) {
+  body {
+    -webkit-text-size-adjust: none !important;
+  }
+  table {
+    -webkit-text-size-adjust: none !important;
+  }
+  td {
+    -webkit-text-size-adjust: none !important;
+  }
+  p {
+    -webkit-text-size-adjust: none !important;
+  }
+  a {
+    -webkit-text-size-adjust: none !important;
+  }
+  li {
+    -webkit-text-size-adjust: none !important;
+  }
+  blockquote {
+    -webkit-text-size-adjust: none !important;
+  }
+  body {
+    width: 100% !important; min-width: 100% !important;
+  }
+  h1 {
+    font-size: 24px !important; line-height: 100% !important;
+  }
+  h2 {
+    font-size: 20px !important; line-height: 100% !important;
+  }
+  h3 {
+    font-size: 18px !important; line-height: 100% !important;
+  }
+  h4 {
+    font-size: 16px !important; line-height: 100% !important;
+  }
+  #templatePreheader {
+    display: none !important;
+  }
+  #headerImage {
+    height: 60px; max-width: 600px !important;
+  }
+  .headerContent {
+    font-size: 20px !important; line-height: 125% !important;
+  }
+  .bodyContent {
+    font-size: 17px !important; line-height: 125% !important;
+  }
+  .templateColumnContainer {
+    display: block !important; width: 100% !important;
+  }
+  .columnImage {
+    max-width: 480px !important;
+  }
+  .leftColumnContent {
+    font-size: 16px !important; line-height: 125% !important;
+  }
+  .rightColumnContent {
+    font-size: 16px !important; line-height: 125% !important;
+  }
+  .footerContent {
+    font-size: 14px !important; line-height: 115% !important;
+  }
+  .footerContent a {
+    display: block !important;
+  }
+  table[class="emailButton"] {
+    width: 100% !important;
+  }
+  td[class="buttonContent"] {
+    padding: 0 !important;
+  }
+  td[class="buttonContent"] a {
+    padding: 10px !important;
+  }
+  .kst-header {
+    height: 360px !important;
+  }
+  .kst-header-content-title {
+    font-size: 36px !important;
+  }
+  .kst-header-content-font {
+    font-size: 16px !important;
+  }
+  .kst-ext-link-size {
+    font-size: 14px !important; height: 56px !important;
+  }
+}
+@media (max-width: 620px) {
+  #bodyCell {
+    padding: 15px !important;
+  }
+  #templateContainer {
+    width: 100% !important; max-width: 100% !important;
+  }
+}
+@media only screen and (max-width: 680px) {
+  body {
+    width: 100% !important; min-width: 100% !important;
+  }
+  table[id="emailHeader"] {
+    width: 100% !important;
+  }
+  table[id="emailBody"] {
+    width: 100% !important;
+  }
+  table[id="emailFooter"] {
+    width: 100% !important;
+  }
+  table[class="flexibleContainer"] {
+    width: 100% !important;
+  }
+  td[class="flexibleContainerCell"] {
+    width: 100% !important;
+  }
+  td[class="flexibleContainerBox"] {
+    display: block; width: 100%; text-align: left;
+  }
+  td[class="flexibleContainerBox"] table {
+    display: block; width: 100%; text-align: left;
+  }
+  td[class="imageContent"] img {
+    height: auto !important; width: 100% !important; max-width: 100% !important;
+  }
+  iframe[class="flexibleImage"] {
+    height: auto !important; width: 100% !important; max-width: 100% !important;
+  }
+  img[class="flexibleImage"] {
+    height: auto !important; width: 100% !important; max-width: 100% !important;
+  }
+  img[class="flexibleImageSmall"] {
+    height: auto !important; width: auto !important;
+  }
+  table[class="flexibleContainerBoxNext"] {
+    padding-top: 10px !important;
+  }
+}
+</style></head>
+
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" class="" style="height: 100% !important; width: 100% !important; font-family: 'Open Sans', Helvetica, sans-serif; line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important; margin: 0; padding: 0;" bgcolor="#eff0f1">
+<center>
+  <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="height: 100% !important; width: 100% !important; font-family: 'Open Sans', Helvetica, sans-serif; border-collapse: collapse; color: #7A7A7A; font-weight: normal !important; line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;" bgcolor="#eff0f1">
+    <tr>
+      <td align="center" valign="top" id="bodyCell" style="height: 100% !important; width: 100% !important; font-family: Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif; line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important; border-top-width: 4px; border-top-color: #BBBBBB; border-top-style: solid; margin: 0; padding: 0;">
+        <!-- BEGIN TEMPLATE // -->
+        <table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="border-collapse: collapse; line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important; width: 600px; max-width: 600px;">
+            <tr>
+              <td align="center" valign="top" style="line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important;">
+                <!-- BEGIN PREHEADER // -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader" style="border-collapse: collapse; line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important; border-bottom-width: 0px; border-bottom-color: #CCCCCC; border-bottom-style: solid;" bgcolor="#eff0f1">
+                  <tr>
+                  </tr>
+                </table>
+                <!-- // END PREHEADER -->
+              </td>
+            </tr>
+          <tr>
+            <td align="center" valign="top" class="main-body" style="line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important;">
+              <!-- BEGIN BODY // -->
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" style="border-collapse: collapse; line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important; border-top-width: 0; border-top-color: #FFFFFF; border-top-style: solid; border-bottom-width: 0; border-bottom-color: #CCCCCC; border-bottom-style: solid;" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top" class="bodyContent" style="color: #505050; font-family: 'Open Sans', Helvetica, sans-serif; font-size: 14px; line-height: 150%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important; padding: 20px;" align="left">
+        <p style="line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important;">Stijn v is starting an activity and you can track their progress:</p>
+        <p style="line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important;">https://www.wahooligan.com/users/live/PcoapJrrFgYl5sKKdToy3w</p>
+    </td>
+  </tr>
+</table>
+
+              <!-- // END BODY -->
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="top" style="line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important;">
+              <!-- BEGIN FOOTER // -->
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter" style="border-collapse: collapse; line-height: 130%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important; border-top-width: 1px; border-top-color: #e1e1e1; border-top-style: solid;" bgcolor="#eff0f1">
+                <!--<tr>-->
+                  <!--<td valign="top" colspan='2' class="footerContent">-->
+                    <!--&lt;!&ndash;<a href="*|TWITTER:PROFILEURL|*">Follow on Twitter</a>&nbsp;&nbsp;&nbsp;<a href="*|FACEBOOK:PROFILEURL|*">Friend on Facebook</a>&nbsp;&nbsp;&nbsp;<a href="*|FORWARD|*">Forward to Friend</a>&nbsp;&ndash;&gt;-->
+                  <!--</td>-->
+                <!--</tr>-->
+                <tr>
+                  <td valign="top" class="footerContent" style="font-family: 'Open Sans', Helvetica, sans-serif; line-height: 21px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important; color: #767676; font-size: 14px; font-style: normal; padding: 20px;">
+                  </td>
+                  <td class="footerContent" align="right" style="font-family: 'Open Sans', Helvetica, sans-serif; line-height: 21px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-weight: normal !important; color: #767676; font-size: 14px; font-style: normal; padding: 20px;">
+                  </td>
+                </tr>
+              </table>
+              <!-- // END FOOTER -->
+            </td>
+          </tr>
+        </table>
+        <!-- // END TEMPLATE -->
+      </td>
+    </tr>
+  </table>
+</center>
+<a href='https://u1889734.ct.sendgrid.net/asm/unsubscribe/?user_id=1889734&amp;data=4zHCe0qn4MoSH3mcD9QtxlMWGzZd1zkiFW0o5CH3zRVoMDAwdTAwMMwFkCzm8SeuJ4sAogIAuRZiZ4y8Fr9UKdYtwy1UbaXmz6tfvNJHs2bZ7d6FdHRxEVcPgK9HA4AQFNu9ScGYFunY1Y6PoQEZWUqG3TxGDz2duiQSEHSDCgovxo8-SU3g3pRn9onDGjm_rvwzxB9xpOtM01Vq1UoBZ4f9aJNGcj8Bli74ZXvswxqt7L1gx1c7457xCylESuMpaibH3_fnCxA1jDYw0Soyj6IPAec5jR6lyhKdtEkbUnyQlr-LXWL3ZmA8IsK5vIZN6b0eJYUqaXrHk5qVdVu2j_NVhKe3k3_zY1XvGuTlf633LFYhXoxMfmelobJmoRtkLexTZEmDmdcbGf0vqnIX-pCORF8lC9O7'>Unsubscribe From This List</a> | <a href='https://u1889734.ct.sendgrid.net/asm/?user_id=1889734&amp;data=kRkTUY8P6yu4mJScfL102-BDuOiu0AOU7F7lAe80LF1oMDAwdTAwMAZxgHYGTxYvqR_j7jerm6A9_gCfxXIFqe_eh2IkdlfQFLzVzn3ZnjhZJ5zJcYR9OHlsPaY97h4AsO5zUd1qnv6e5eQNhywgdUbx1obVpoqLdPnX2NJrNLviLsPlKDr4cCxc6p3ZzERwfUI1NRkWsvdFcseKgvTyDtR7BP1k19EFZbd-vv9373-VPPSlj9FmdsAVzcmb3SdWSdix_1BCV53cpciBspVFZ9yW7w6EPUpB-9ZhdfMWZ_h0I6IojMpCMWb0R_fM1uzmMZ5Vy8TmCWCkd3-Jexy94iV5aThviVfkpOJoPh5yMn396mfauESdEDLJAn3GT7DCn-8VopiY7nc='>Manage Email Preferences</a><img src="https://u1889734.ct.sendgrid.net/wf/open?upn=i9WsC6GOFXSqBlpYWltx9-2B-2Fy0BpCvLEKzJY55Go7NSs3PtB-2BcaudVYNCNYyPtp3l7LbsO-2B8vMFz3mldA0k1VU-2BbSbvCifpbZDD-2FJnMrPm7FtzxPSRZChvLh6xU4XTohr38zkMP5LqzqQ9-2FMs2hhWMm4R0yq0cZQ-2B4Fr1IdmBrIZ2UfK0-2FkljdUDWAASwNBo-2FmZur9S6v-2BAFqTSzo-2FSQBJkYMm1-2BZL1ivMIcp40RPsHnGouZqEpODdGzltL0cuh6X" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+
+----==_mimepart_64b4f0223b6aa_1218a2c66475--
