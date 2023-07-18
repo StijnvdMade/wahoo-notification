@@ -4,12 +4,23 @@
 
 import re
 import sys
+import os
+
+# Get the absolute path of the current script file
+current_script_path = os.path.abspath(__file__)
+
+# Get the directory of the script
+script_directory = os.path.dirname(current_script_path)
+
+# Your file name (replace 'your_file_name.txt' with your actual file name)
+file_name = 'email.html'
+
+# Construct the absolute path to your file
+file_path = os.path.join(script_directory, file_name)
 
 def read_email():
-    # print argv
-    # print(sys.argv[1])
     # Read email from file
-    with open('~/Wahoo_mails/email.html', 'r') as f:
+    with open(file_path, 'r') as f:
         email = f.read()
     return email
 
