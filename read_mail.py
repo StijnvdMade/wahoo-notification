@@ -9,7 +9,7 @@ def read_email():
     # print argv
     # print(sys.argv[1])
     # Read email from file
-    with open('Wahoo_mails/email.html', 'r') as f:
+    with open('../Wahoo_mails/email.html', 'r') as f:
         email = f.read()
     return email
 
